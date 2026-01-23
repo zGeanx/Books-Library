@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Minimalist Palette - Soft Neutrals */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Accent - Subtle Sage Green */
+    --primary: 150 20% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Beige */
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    /* Muted - Light Gray */
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Soft Terracotta */
+    --accent: 15 25% 88%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders - Very Subtle */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 150 20% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 150 25% 55%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 15 20% 20%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 150 25% 55%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+
+  .perspective-3d {
+    perspective: 1500px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .book-page-gradient-left {
+    background: linear-gradient(to right, hsl(var(--muted)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .book-page-gradient-right {
+    background: linear-gradient(to left, hsl(var(--muted)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .book-spine-gradient {
+    background: linear-gradient(to bottom,
+        hsl(var(--foreground) / 0.1) 0%,
+        hsl(var(--foreground) / 0.05) 50%,
+        hsl(var(--foreground) / 0.1) 100%);
+  }
+
+  .book-shadow-gradient {
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        hsl(var(--foreground) / 0.2) 20%,
+        hsl(var(--foreground) / 0.3) 50%,
+        hsl(var(--foreground) / 0.2) 80%,
+        transparent 100%);
+  }
+
+  .book-lines-pattern {
+    background-image: repeating-linear-gradient(transparent,
+        transparent 23px,
+        hsl(var(--foreground) / 0.03) 23px,
+        hsl(var(--foreground) / 0.03) 24px);
+  }
+
+  .bookmark-ribbon-gradient {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b1428 100%);
+  }
+
+  .bookmark-ribbon-shape {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-8 {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
