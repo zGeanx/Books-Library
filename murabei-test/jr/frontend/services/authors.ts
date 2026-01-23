@@ -1,9 +1,11 @@
 import { Author } from '@/types/authors';
-import { API_BASE_URL, API_ENDPOINTS } from './config';
+import { getApiBaseUrl, API_ENDPOINTS } from './config';
 
 export async function getAuthors(): Promise<Author[]> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.authors.list}`
+        `${apiBaseUrl}${API_ENDPOINTS.authors.list}`,
+        { cache: 'no-store' }
     );
 
     if (!response.ok) {

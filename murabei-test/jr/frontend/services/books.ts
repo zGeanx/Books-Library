@@ -1,12 +1,16 @@
 import { Book } from '@/types/book';
-import { API_BASE_URL, API_ENDPOINTS, DEFAULT_PAGE_SIZE } from './config';
+import { getApiBaseUrl, API_ENDPOINTS, DEFAULT_PAGE_SIZE } from './config';
 
 export async function getBooks(
     page: number = 1,
     pageSize: number = DEFAULT_PAGE_SIZE
 ): Promise<Book[]> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.books.list}?page=${page}&page_size=${pageSize}`
+        `${apiBaseUrl}${API_ENDPOINTS.books.list}?page=${page}&page_size=${pageSize}`,
+        {
+            cache: 'no-store',
+        }
     );
 
     if (!response.ok) {
@@ -17,8 +21,10 @@ export async function getBooks(
 }
 
 export async function getBooksByAuthor(authorSlug: string): Promise<Book[]> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.books.byAuthor(authorSlug)}`
+        `${apiBaseUrl}${API_ENDPOINTS.books.byAuthor(authorSlug)}`,
+        { cache: 'no-store' }
     );
 
     if (!response.ok) {
@@ -29,8 +35,10 @@ export async function getBooksByAuthor(authorSlug: string): Promise<Book[]> {
 }
 
 export async function getBooksBySubject(subject: string): Promise<Book[]> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.books.bySubject(subject)}`
+        `${apiBaseUrl}${API_ENDPOINTS.books.bySubject(subject)}`,
+        { cache: 'no-store' }
     );
 
     if (!response.ok) {
@@ -41,8 +49,10 @@ export async function getBooksBySubject(subject: string): Promise<Book[]> {
 }
 
 export async function getBookSubjects(): Promise<string[]> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.books.subjects}`
+        `${apiBaseUrl}${API_ENDPOINTS.books.subjects}`,
+        { cache: 'no-store' }
     );
 
     if (!response.ok) {
@@ -55,8 +65,9 @@ export async function getBookSubjects(): Promise<string[]> {
 export async function createBook(
     bookData: Omit<Book, 'id'>
 ): Promise<{ message: string }> {
+    const apiBaseUrl = getApiBaseUrl();
     const response = await fetch(
-        `${API_BASE_URL}${API_ENDPOINTS.books.list}`,
+        `${apiBaseUrl}${API_ENDPOINTS.books.list}`,
         {
             method: 'POST',
             headers: {
