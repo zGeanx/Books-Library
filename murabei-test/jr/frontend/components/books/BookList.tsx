@@ -3,8 +3,8 @@
 import { Book } from '@/types/book';
 import BookCard from './BookCard';
 import Pagination from '../Pagination';
-import ThemeToggle from '../theme-toggle';
-import SearchInput from '../search-input';
+import ThemeToggle from '../ThemeToggle';
+import SearchInput from '../SearchInput';
 import { Button } from '@/components/ui/button';
 import { PenLine } from 'lucide-react';
 import CreateBookDialog from '../CreateBookDialog';
