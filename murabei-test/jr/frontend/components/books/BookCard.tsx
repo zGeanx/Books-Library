@@ -13,10 +13,10 @@ export default function BookCard({ book }: BookCardProps) {
 
     return (
         <div className="perspective-3d w-full h-[280px] flex items-center justify-center group relative">
-            <div className="absolute top-[19px] left-1/2 -translate-x-1/2 w-[18px] h-6 bookmark-ribbon-gradient bookmark-ribbon-shape shadow-[0_2px_4px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] z-[100] opacity-85 transition-all duration-[600ms] ease-in-out pointer-events-none group-hover:top-[11px] group-hover:opacity-100 group-hover:shadow-[0_4px_8px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]" />
+            <div className="absolute top-[19px] left-1/2 -translate-x-1/2 w-[18px] h-6 bookmark-ribbon-gradient bookmark-ribbon-shape shadow-[0_2px_4px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.2)] z-100 opacity-85 transition-all duration-600 ease-in-out pointer-events-none group-hover:top-[11px] group-hover:opacity-100 group-hover:shadow-[0_4px_8px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]" />
 
-            <div className="relative w-full h-60 flex preserve-3d transition-transform duration-[600ms] ease-in-out group-hover:-translate-y-2 group-hover:rotate-x-[5deg]">
-                <div className="relative w-1/2 h-full bg-card border border-border border-r-0 shadow-[0_4px_12px_hsl(var(--foreground)/0.1)] transition-all duration-[400ms] ease-in-out overflow-hidden z-[1] rounded-l-lg origin-right book-page-gradient-left group-hover:rotate-y-[-3deg] group-hover:shadow-[-2px_4px_16px_hsl(var(--foreground)/0.15)]">
+            <div className="relative w-full h-60 flex preserve-3d transition-transform duration-600 ease-in-out group-hover:-translate-y-2 group-hover:rotate-x-[5deg]">
+                <div className="relative w-1/2 h-full bg-card border border-border border-r-0 shadow-[0_4px_12px_hsl(var(--foreground)/0.1)] transition-all duration-400 ease-in-out overflow-hidden z-1 rounded-l-lg origin-right book-page-gradient-left group-hover:-rotate-y-3 group-hover:shadow-[-2px_4px_16px_hsl(var(--foreground)/0.15)]">
                     <div className="p-6 h-full flex flex-col relative">
                         <div className="absolute -right-px top-0 bottom-0 w-[3px] book-spine-gradient" />
 
@@ -29,7 +29,7 @@ export default function BookCard({ book }: BookCardProps) {
                     </div>
                 </div>
 
-                <div className="relative w-1/2 h-full bg-card border border-border border-l-0 shadow-[0_4px_12px_hsl(var(--foreground)/0.1)] transition-all duration-[400ms] ease-in-out overflow-hidden z-[1] rounded-r-lg origin-left book-page-gradient-right group-hover:rotate-y-[3deg] group-hover:shadow-[2px_4px_16px_hsl(var(--foreground)/0.15)]">
+                <div className="relative w-1/2 h-full bg-card border border-border border-l-0 shadow-[0_4px_12px_hsl(var(--foreground)/0.1)] transition-all duration-400 ease-in-out overflow-hidden z-1 rounded-r-lg origin-left book-page-gradient-right group-hover:rotate-y-3 group-hover:shadow-[2px_4px_16px_hsl(var(--foreground)/0.15)]">
                     <div className="p-6 h-full flex flex-col relative">
                         <div className="absolute inset-6 book-lines-pattern pointer-events-none" />
 
