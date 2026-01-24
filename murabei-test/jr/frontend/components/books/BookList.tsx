@@ -5,6 +5,10 @@ import BookCard from './BookCard';
 import Pagination from '../Pagination';
 import ThemeToggle from '../theme-toggle';
 import SearchInput from '../search-input';
+import { Button } from '@/components/ui/button';
+import { PenLine } from 'lucide-react';
+import CreateBookDialog from '../CreateBookDialog';
+import { useState } from 'react';
 
 interface BooksListProps {
     books: Book[];
@@ -13,6 +17,7 @@ interface BooksListProps {
 
 export default function BookList({ books, currentPage }: BooksListProps) {
     const hasNextPage = books.length === 10;
+    const [isCreating, setIsCreating] = useState(false);
 
     return (
         <div className="min-h-screen bg-background">
@@ -29,7 +34,18 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span>{books.length} {books.length === 1 ? 'livro' : 'livros'}</span>
                             </div>
                         </div>
-                        <ThemeToggle />
+                        <div className="flex items-center gap-3">
+                            <Button
+                                variant="default"
+                                size="default"
+                                onClick={() => setIsCreating(true)}
+                                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                            >
+                                <PenLine className="h-4 w-4 mr-2" />
+                                Criar Livro
+                            </Button>
+                            <ThemeToggle />
+                        </div>
                     </div>
                     <SearchInput />
                 </div>
@@ -50,6 +66,8 @@ export default function BookList({ books, currentPage }: BooksListProps) {
 
                 <Pagination currentPage={currentPage} hasNextPage={hasNextPage} />
             </div>
+
+            <CreateBookDialog open={isCreating} onOpenChange={setIsCreating} />
         </div>
     );
 }
