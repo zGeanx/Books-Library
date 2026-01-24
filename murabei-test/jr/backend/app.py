@@ -20,9 +20,10 @@ def get_books():
     # Get the page and page_size parameters from the request arguments
     page = request.args.get('page', default=1, type=int)
     page_size = request.args.get('page_size', default=10, type=int)
+    search = request.args.get('search', default=None, type=str)
 
-    # Call the get_all_books function with the page and page_size parameters
-    books = get_all_books(page=page, page_size=page_size)
+    # Call the get_all_books function with the page, page_size, and search parameters
+    books = get_all_books(page=page, page_size=page_size, search=search)
 
     # Return the books as a JSON response
     return jsonify(books)
@@ -68,15 +69,25 @@ def create_book():
     return jsonify(create_new_book(book_data))
 
 
-def get_all_books(page=1, page_size=10):
+def get_all_books(page=1, page_size=10, search=None):
     conn = sqlite3.connect('db.sqlite')
     cursor = conn.cursor()
 
     # Calculate the offset based on the page number and page size
     offset = (page - 1) * page_size
 
-    # Execute a SELECT query with pagination
-    cursor.execute(f'SELECT * FROM book LIMIT {page_size} OFFSET {offset};')
+    # Build the query based on whether search is provided
+    if search:
+        # Search in both title and author fields
+        search_pattern = f'%{search}%'
+        cursor.execute(
+            'SELECT * FROM book WHERE (title LIKE ? OR author LIKE ?) LIMIT ? OFFSET ?;',
+            (search_pattern, search_pattern, page_size, offset)
+        )
+    else:
+        # Execute a SELECT query with pagination
+        cursor.execute(f'SELECT * FROM book LIMIT {page_size} OFFSET {offset};')
+    
     books = cursor.fetchall()
 
     # Convert the books data to a list of dictionaries
