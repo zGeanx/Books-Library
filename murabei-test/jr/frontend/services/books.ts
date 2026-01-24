@@ -3,11 +3,21 @@ import { getApiBaseUrl, API_ENDPOINTS, DEFAULT_PAGE_SIZE } from './config';
 
 export async function getBooks(
     page: number = 1,
-    pageSize: number = DEFAULT_PAGE_SIZE
+    pageSize: number = DEFAULT_PAGE_SIZE,
+    search?: string
 ): Promise<Book[]> {
     const apiBaseUrl = getApiBaseUrl();
+    const params = new URLSearchParams({
+        page: page.toString(),
+        page_size: pageSize.toString(),
+    });
+
+    if (search) {
+        params.append('search', search);
+    }
+
     const response = await fetch(
-        `${apiBaseUrl}${API_ENDPOINTS.books.list}?page=${page}&page_size=${pageSize}`,
+        `${apiBaseUrl}${API_ENDPOINTS.books.list}?${params.toString()}`,
         {
             cache: 'no-store',
         }
