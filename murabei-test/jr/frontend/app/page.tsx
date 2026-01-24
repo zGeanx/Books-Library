@@ -4,18 +4,19 @@ import BookList from '@/components/books/BookList';
 
 
 interface PageProps {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; search?: string }>;
 }
 
 export default async function Home({ searchParams }: PageProps) {
   const params = await searchParams;
   const currentPage = Number(params.page) || 1;
+  const search = params.search;
 
   let books: Book[] = [];
   let error: string | null = null;
 
   try {
-    books = await getBooks(currentPage, 10);
+    books = await getBooks(currentPage, 10, search);
   } catch (err) {
     error = err instanceof Error ? err.message : 'An error occurred';
   }

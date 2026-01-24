@@ -4,6 +4,7 @@ import { Book } from '@/types/book';
 import BookCard from './BookCard';
 import Pagination from '../Pagination';
 import ThemeToggle from '../theme-toggle';
+import SearchInput from '../search-input';
 
 interface BooksListProps {
     books: Book[];
@@ -16,7 +17,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
     return (
         <div className="min-h-screen bg-background">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
-                <div className="mb-16 space-y-3">
+                <div className="mb-16 space-y-6">
                     <div className="flex items-start justify-between">
                         <div className="space-y-3">
                             <h1 className="text-5xl font-light tracking-tight text-foreground">
@@ -30,6 +31,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                         </div>
                         <ThemeToggle />
                     </div>
+                    <SearchInput />
                 </div>
 
                 {books.length === 0 ? (
