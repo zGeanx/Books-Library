@@ -138,7 +138,11 @@ export default function CreateBookDialog({ open, onOpenChange }: CreateBookDialo
                         >
                             Cancelar
                         </Button>
-                        <Button type="submit" disabled={isLoading}>
+                        <Button
+                            type="submit"
+                            disabled={isLoading}
+                            className="bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-all duration-300"
+                        >
                             {isLoading ? 'Criando...' : 'Criar Livro'}
                         </Button>
                     </div>

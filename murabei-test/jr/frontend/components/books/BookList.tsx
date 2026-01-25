@@ -39,7 +39,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 variant="default"
                                 size="default"
                                 onClick={() => setIsCreating(true)}
-                                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                                className="bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-all duration-300"
                             >
                                 <PenLine className="h-4 w-4 mr-2" />
                                 Criar Livro
