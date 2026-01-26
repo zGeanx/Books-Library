@@ -18,7 +18,7 @@ A aplicação está hospedada e disponível para acesso através dos seguintes l
 - **Frontend**: [https://murabei-frontend.onrender.com](https://murabei-frontend.onrender.com)
 - **Backend (API)**: [https://murabei-backend.onrender.com](https://murabei-backend.onrender.com)
 
-## Componentes Principais
+## 📦 Componentes Principais
 
 O repositório é dividido em 3 pastas principais:
 
@@ -39,7 +39,7 @@ Local para o desenvolvimento do Frontend.
 - Stack: Next.js (versão 14.2.25 requerida).
 - Framework UI: `shadcn/ui` (obrigatório).
 
-## Inicialização
+## 🚀 Inicialização
 
 Siga os passos abaixo para rodar o projeto:
 
@@ -66,7 +66,7 @@ Siga os passos abaixo para rodar o projeto:
       ```
       *Isso subirá todos os serviços definidos no docker-compose.*
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 .
@@ -128,15 +128,15 @@ Siga os passos abaixo para rodar o projeto:
     └── tsconfig.json
 ```
 
-## Sugestões de Melhorias
+## 💡 Sugestões de Melhorias
 
-### Funcionalidades
+### ⚡ Funcionalidades
 - **Exclusão de Livros (Delete)**: Implementar um botão de exclusão em cada card de livro, com um modal de confirmação (AlertDialog) para evitar remoções acidentais e feedback visual de sucesso/erro.
 - **Edição de Livros (Edit)**: Adicionar a capacidade de atualizar as informações de um livro. Isso pode ser feito reutilizando o diálogo de criação preenchido com os dados atuais do livro.
 - **Melhorias na Busca**: Implementar *debounce* nos campos de busca para reduzir o número de requisições desnecessárias à API.
 - **Paginação e Filtros**: Persistir o estado da paginação e filtros na URL para permitir o compartilhamento de links de resultados específicos.
 
-### Qualidade de Código e Infraestrutura
+### 🔧 Qualidade de Código e Infraestrutura
 - **Testes**: Adicionar testes unitários (Jest/React Testing Library) e testes E2E (Playwright/Cypress) para garantir a estabilidade do sistema.
 - **Tratamento de Erros**: Implementar um sistema robusto de notificações (Toasts) para informar o usuário sobre o status das requisições (sucesso, erro de rede, validação).
 - **Acessibilidade**: Garantir que todos os componentes interativos sejam totalmente navegáveis por teclado e compatíveis com leitores de tela.
