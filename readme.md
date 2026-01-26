@@ -16,7 +16,7 @@ Demonstrar a implementação de uma arquitetura FullStack escalável e de fácil
 A aplicação está hospedada e disponível para acesso através dos seguintes links:
 
 - **Frontend**: [https://murabei-frontend.onrender.com](https://murabei-frontend.onrender.com)
-- **Backend (API)**: [https://murabei-backend.onrender.com](https://murabei-backend.onrender.com)
+- **Backend (API)**: [https://murabei-backend1.onrender.com/](https://murabei-backend.onrender.com)
 
 > [!IMPORTANT]
 > Como estamos utilizando o **Render gratuito**, o backend desliga automaticamente após períodos de inatividade. 
