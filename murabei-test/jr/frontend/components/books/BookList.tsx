@@ -23,8 +23,8 @@ export default function BookList({ books, currentPage }: BooksListProps) {
         <div className="min-h-screen bg-background">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
                 <div className="mb-12 sm:mb-16 space-y-6">
-                    <div className="flex flex-col items-end sm:flex-row sm:items-start sm:justify-between gap-6">
-                        <div className="space-y-3 w-full sm:w-auto">
+                    <div className="flex flex-row items-start justify-between gap-3 sm:gap-6">
+                        <div className="space-y-3">
                             <h1 className="text-4xl sm:text-5xl font-light tracking-tight text-foreground">
                                 Biblioteca
                             </h1>
@@ -34,8 +34,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span>{books.length} {books.length === 1 ? 'livro' : 'livros'}</span>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end gap-4">
-                            <ThemeToggle />
+                        <div className="flex flex-row items-center gap-3 shrink-0">
                             <Button
                                 variant="default"
                                 size="default"
@@ -46,6 +45,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span className="hidden sm:inline">Criar Livro</span>
                                 <span className="sm:hidden">Criar</span>
                             </Button>
+                            <ThemeToggle />
                         </div>
                     </div>
                     <SearchInput />
