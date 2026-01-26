@@ -34,7 +34,8 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span>{books.length} {books.length === 1 ? 'livro' : 'livros'}</span>
                             </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col items-end gap-3">
+                            <ThemeToggle />
                             <Button
                                 variant="default"
                                 size="default"
@@ -45,7 +46,6 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span className="hidden sm:inline">Criar Livro</span>
                                 <span className="sm:hidden">Criar</span>
                             </Button>
-                            <ThemeToggle />
                         </div>
                     </div>
                     <SearchInput />
