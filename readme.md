@@ -1,10 +1,24 @@
-# Murabei Test - Teste para Desenvolvedor FullStack Jr
+# 📚 Murabei Library System
 
-Este é o teste para Desenvolvedor FullStack Jr na Murabei Data Science, utilizando Docker, Python, Next.js e sqlite3.
+Solução desenvolvida para o **Teste de Desenvolvedor FullStack Jr** da **Murabei Data Science**.
 
-## Descrição
+Este projeto apresenta uma aplicação completa de gerenciamento de biblioteca, integrando uma interface moderna em **Next.js** com uma API robusta em **Python/Flask**, totalmente containerizada com **Docker**.
 
-O objetivo deste teste é avaliar a capacidade do desenvolvedor em criar uma aplicação Frontend e integrá-la a uma API Python. Toda a aplicação é mantida em containers Docker e roda usando `docker-compose`. Esta é a mesma arquitetura usada em todos os projetos internos da Murabei.
+## 🎯 Objetivo
+
+Demonstrar a implementação de uma arquitetura FullStack escalável e de fácil manutenção, focando em:
+- **UX/UI Moderna**: Interface limpa e responsiva utilizando *shadcn/ui* e *Tailwind CSS*.
+- **Código Limpo**: Estrutura organizada e boas práticas de desenvolvimento.
+- **DevOps**: Ambiente de desenvolvimento padronizado via Docker Compose.
+
+## 🌐 Acesso Online
+
+A aplicação está hospedada e disponível para acesso através dos seguintes links:
+
+- **Frontend**: [https://murabei-frontend.onrender.com](https://murabei-frontend.onrender.com)
+- **Backend (API)**: [https://murabei-backend.onrender.com](https://murabei-backend.onrender.com)
+
+> **Nota**: Os serviços estão hospedados no plano gratuito da Render. Na primeira requisição após um período de inatividade, pode haver um delay de ~30 segundos enquanto os servidores são reativados.
 
 ## Estrutura do Projeto
 
