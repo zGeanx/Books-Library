@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { getApiBaseUrl } from '@/services/config';
 
 interface CreateBookDialogProps {
     open: boolean;
@@ -35,7 +36,8 @@ export default function CreateBookDialog({ open, onOpenChange }: CreateBookDialo
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/v1/books', {
+            const apiBaseUrl = getApiBaseUrl();
+            const response = await fetch(`${apiBaseUrl}/api/v1/books`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
