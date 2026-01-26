@@ -222,11 +222,11 @@ def create_new_book(book_data):
     # Get the book data from the request body
     title = book_data['title']
     author = book_data['author']
-    author_slug = book_data['author_slug']
-    author_bio = book_data['author_bio']
-    authors = book_data['authors']
-    publisher = book_data['publisher']
-    synopsis = book_data['synopsis']
+    author_slug = book_data.get('author_slug') or author.lower().replace(' ', '-')
+    author_bio = book_data.get('author_bio') or ''
+    authors = book_data.get('authors') or author
+    publisher = book_data.get('publisher') or ''
+    synopsis = book_data.get('synopsis') or ''
 
     # Execute a query to create a new book
     cursor.execute('INSERT INTO book (title, author, author_slug, author_bio, authors, publisher, synopsis) VALUES (?, ?, ?, ?, ?, ?, ?);',
