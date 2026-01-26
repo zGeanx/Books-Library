@@ -22,10 +22,10 @@ export default function BookList({ books, currentPage }: BooksListProps) {
     return (
         <div className="min-h-screen bg-background">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
-                <div className="mb-16 space-y-6">
-                    <div className="flex items-start justify-between">
+                <div className="mb-12 sm:mb-16 space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
                         <div className="space-y-3">
-                            <h1 className="text-5xl font-light tracking-tight text-foreground">
+                            <h1 className="text-4xl sm:text-5xl font-light tracking-tight text-foreground">
                                 Biblioteca
                             </h1>
                             <div className="flex items-center gap-3 text-sm text-muted-foreground/70 font-light">
@@ -42,7 +42,8 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 className="bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-all duration-300"
                             >
                                 <BookPlus className="h-4 w-4 mr-2" />
-                                Criar Livro
+                                <span className="hidden sm:inline">Criar Livro</span>
+                                <span className="sm:hidden">Criar</span>
                             </Button>
                             <ThemeToggle />
                         </div>
