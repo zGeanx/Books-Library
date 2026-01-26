@@ -18,6 +18,11 @@ A aplicação está hospedada e disponível para acesso através dos seguintes l
 - **Frontend**: [https://murabei-frontend.onrender.com](https://murabei-frontend.onrender.com)
 - **Backend (API)**: [https://murabei-backend.onrender.com](https://murabei-backend.onrender.com)
 
+> [!IMPORTANT]
+> Como estamos utilizando o **Render gratuito**, o backend desliga automaticamente após períodos de inatividade. 
+> **Antes de acessar o frontend**, acesse primeiro o link do backend para "acordá-lo". 
+> Aguarde alguns segundos até que o serviço esteja ativo (você verá uma resposta da API), e então acesse o frontend normalmente.
+
 ## 📦 Componentes Principais
 
 O repositório é dividido em 3 pastas principais:
