@@ -18,9 +18,7 @@ A aplicação está hospedada e disponível para acesso através dos seguintes l
 - **Frontend**: [https://murabei-frontend.onrender.com](https://murabei-frontend.onrender.com)
 - **Backend (API)**: [https://murabei-backend.onrender.com](https://murabei-backend.onrender.com)
 
-> **Nota**: Os serviços estão hospedados no plano gratuito da Render. Na primeira requisição após um período de inatividade, pode haver um delay de ~30 segundos enquanto os servidores são reativados.
-
-## Estrutura do Projeto
+## Componentes Principais
 
 O repositório é dividido em 3 pastas principais:
 
