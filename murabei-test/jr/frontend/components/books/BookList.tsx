@@ -6,7 +6,7 @@ import Pagination from '../Pagination';
 import ThemeToggle from '../ThemeToggle';
 import SearchInput from '../SearchInput';
 import { Button } from '@/components/ui/button';
-import { PenLine } from 'lucide-react';
+import { BookPlus } from 'lucide-react';
 import CreateBookDialog from '../CreateBookDialog';
 import { useState } from 'react';
 
@@ -41,7 +41,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 onClick={() => setIsCreating(true)}
                                 className="bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-all duration-300"
                             >
-                                <PenLine className="h-4 w-4 mr-2" />
+                                <BookPlus className="h-4 w-4 mr-2" />
                                 Criar Livro
                             </Button>
                             <ThemeToggle />
