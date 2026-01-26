@@ -23,7 +23,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
         <div className="min-h-screen bg-background">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
                 <div className="mb-12 sm:mb-16 space-y-6">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                         <div className="space-y-3">
                             <h1 className="text-4xl sm:text-5xl font-light tracking-tight text-foreground">
                                 Biblioteca
@@ -34,7 +34,7 @@ export default function BookList({ books, currentPage }: BooksListProps) {
                                 <span>{books.length} {books.length === 1 ? 'livro' : 'livros'}</span>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end gap-3">
+                        <div className="flex flex-col items-end gap-4 sm:pt-0">
                             <ThemeToggle />
                             <Button
                                 variant="default"
